@@ -1,0 +1,10 @@
+<nav class="d-flex justify-content-center py-2">
+  <div *ngIf="!menu">菜单数据错误, 菜单列表undefined</div>
+  <ul class="nav nav-pills" *ngIf="menu">
+    <li class="nav-item" *ngFor="let menuItem of menu;">
+      <a [routerLink]="menuItem.link" routerLinkActive="active" class="nav-link" aria-current="page" data-bs-toggle="pill">
+        <i *ngIf="menuItem.icon" [class]="menuItem.icon" class="fa fa-fw"></i>
+        {{ menuItem.name }}</a>
+    </li>
+  </ul>
+</nav>
